@@ -50,6 +50,7 @@ public class GameController : MonoBehaviour
             // Reduce la vida y actualiza el texto
             lives -= 1;
             UpdateLivesText();
+            Destroy(collision.gameObject);
 
             // Verifica si las vidas se acabaron
             if (lives <= 0)
@@ -92,5 +93,6 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("MainMenu"); // Asegúrate de que este nombre coincida con tu escena de menú
     }
 }
+
 
 

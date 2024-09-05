@@ -134,10 +134,9 @@ GameObject:
   - component: {fileID: 227403950}
   - component: {fileID: 227403949}
   - component: {fileID: 227403948}
-  - component: {fileID: 227403952}
-  - component: {fileID: 227403953}
   - component: {fileID: 227403955}
   - component: {fileID: 227403954}
+  - component: {fileID: 227403956}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -225,36 +224,12 @@ Transform:
   m_GameObject: {fileID: 227403946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 1.44, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227403952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227403946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18586354fce1b45468de43efe16e014f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &227403953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227403946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aaf9d5410bb0d743afebc7aafe9edb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &227403954
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -291,10 +266,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 227403946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7356210d432524d4db4afd827401605d, type: 3}
+  m_Script: {fileID: 11500000, guid: d365c5ad9a1856845af7b8a63ceb18e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  scoreText: {fileID: 673587557}
+  livesText: {fileID: 1853710169}
+  timerText: {fileID: 980236882}
+  restartButton: {fileID: 2004870929}
+--- !u!114 &227403956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227403946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77fdb4dc73b3184a8afa4779dbb6023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  moveSpeed: 5
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 673587557}
   livesText: {fileID: 1853710169}
+  timerText: {fileID: 0}
   restartButton: {fileID: 2004870929}
 --- !u!114 &547770355
 MonoBehaviour:
@@ -726,7 +719,8 @@ GameObject:
   - component: {fileID: 799687969}
   - component: {fileID: 799687968}
   - component: {fileID: 799687967}
-  - component: {fileID: 799687972}
+  - component: {fileID: 799687974}
+  - component: {fileID: 799687975}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -846,18 +840,54 @@ Transform:
   - {fileID: 1141793227}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &799687972
+--- !u!54 &799687974
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799687966}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &799687975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799687966}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aaf9d5410bb0d743afebc7aafe9edb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6977440071fcf464980db42b3ccf9169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  referenceTransform: {fileID: 0}
+  yOffset: 0
+  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  squareWidth: 1
+  squareHeight: 1
+  numberOfPrefabs: 10
+  showGizmo: 1
+  prefabRotation: {x: 37, y: 90, z: 47}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
