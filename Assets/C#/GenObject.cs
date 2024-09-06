@@ -34,8 +34,6 @@ public class RandomPrefabSpawner : MonoBehaviour
                     planePosition.y + yOffset,
                     Random.Range(planePosition.z - planeSize.z / 2, planePosition.z + planeSize.z / 2)
                 );
-
-                // Instanciar el prefab en la posición aleatoria
                 Instantiate(prefab, randomPosition, Quaternion.identity);
             }
         }
